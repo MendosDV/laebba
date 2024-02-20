@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+
+const nunito = Nunito({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-nunito",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={nunito.className}>
         <Navbar />
-        <p>Hello</p>
+        {/* {children} */}
+        prout nez
         <Footer />
       </body>
     </html>
