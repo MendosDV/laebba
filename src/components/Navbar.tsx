@@ -1,14 +1,14 @@
+import Image from 'next/image'
+
 export default function Navbar() {
   return (
-    <div className="flex h-16 w-full items-center justify-center border-b">
-      <h4>Navbar</h4>
-      <a
-        className="flex items-center justify-center gap-2"
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-      </a>
+    <div className="flex justify-end items-center border-transparent border-b shadow-md mb-4">
+      <Image
+        src="/logo.png"
+        width={120}
+        height={120}
+        alt="Picture of the author"
+      />
     </div>
   );
 }
