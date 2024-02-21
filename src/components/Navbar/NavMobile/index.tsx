@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaGithub } from "react-icons/fa";
+import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function NavMobile() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -13,7 +15,6 @@ export default function NavMobile() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log('jemma');
   };
 
   const handleScroll = () => {
@@ -29,9 +30,9 @@ export default function NavMobile() {
   }, []);
 
   return (
-    <div>
-      <div className={`sticky top-0 border-transparent border-b mb-4 p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''}`}>
-        <button onClick={toggleMenu}>
+    <div className='fixed top-0 left-0 w-full h-full'>
+      <div className={`border-transparent border-b mb-4 p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''} top-0`}>
+        <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
         </button>
         <h2 className="font-extrabold text-3xl">
@@ -39,29 +40,40 @@ export default function NavMobile() {
         </h2>
       </div>
 
-      { isMenuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-primary z-50 p-4 overflow-hidden">
-          <div className='sticky top-0 mb-4 flex justify-between items-center flex-row-reverse'>
-            <button onClick={toggleMenu} className='font-extrabold'>
-              <IoClose style={{fontSize: '2.8rem'}}/>
-            </button>
-            <h2 className="font-extrabold text-3xl">
-              Laebba
-            </h2>
-          </div>
-          <ul className="h-5/6 flex flex-col gap-4 justify-center items-center">
-            <li className="text-2xl font-bold"><a href="#">Accueil</a></li>
-            <li className='text-2xl font-bold'><a href="#">CV</a></li>
-            <li className='text-2xl font-bold'><a href="#">Projets</a></li>
-            <li className='text-2xl font-bold'><a href="#">Contact</a></li>
-          </ul>
-          <Langage />
-          <div className='flex justify-center items-center gap-3'>
-            <TiSocialLinkedin style={{fontSize: '2rem'}}/>
-            <FaGithub style={{fontSize: '2rem'}}/>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="fixed top-0 left-0 w-full h-full bg-primary z-50 p-4"
+          >
+            <div className='sticky top-0 flex justify-between items-center flex-row-reverse'>
+              <button onClick={toggleMenu}
+              className="font-extrabold" aria-label='Fermer le menu'>
+                <IoClose style={{fontSize: '2.2rem'}}/>
+              </button>
+              <h2 className="font-extrabold text-3xl">
+                Laebba
+              </h2>
+            </div>
+            <ul
+              className="h-4/5 flex flex-col gap-5 justify-center items-center"
+            >
+              <Link href='/' className='text-2xl font-bold'>Accueil</Link>
+              <Link href='/cv' className='text-2xl font-bold'>CV</Link>
+              <Link href='/projets' className='text-2xl font-bold'>Projets</Link>
+              <Link href='/contact' className='text-2xl font-bold'>Contact</Link>
+            </ul>
+            <Langage />
+            <div className='flex justify-center items-center gap-3'>
+              <TiSocialLinkedin style={{fontSize: '2rem'}} aria-label='Linkedin'/>
+              <FaGithub style={{fontSize: '2rem'}} aria-label='Github'/>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
