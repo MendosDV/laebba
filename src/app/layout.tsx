@@ -25,45 +25,6 @@ export default function RootLayout({
       <body className={nunito.className}>
         <Navbar />
         {/* {children} */}
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
-        <p>Prout</p>
 
         <Footer />
       </body>
