@@ -2,11 +2,11 @@
 
 import Logo from '@/components/Navbar/Logo';
 import Langage from '@/components/Navbar/Langage';
+import Links from '@/components/Navbar/Links';
 import { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaGithub } from "react-icons/fa";
-import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function NavMobile() {
@@ -30,13 +30,13 @@ export default function NavMobile() {
   }, []);
 
   return (
-    <div className='fixed top-0 left-0 w-full h-full'>
+    <nav className='fixed top-0 left-0 w-full h-full'>
       <div className={`border-transparent border-b mb-4 p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''} top-0`}>
         <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
         </button>
         <h2 className="font-extrabold text-3xl">
-          Laebba
+          Mabbeal
         </h2>
       </div>
 
@@ -55,17 +55,10 @@ export default function NavMobile() {
                 <IoClose style={{fontSize: '2.2rem'}}/>
               </button>
               <h2 className="font-extrabold text-3xl">
-                Laebba
+                Mabbeal
               </h2>
             </div>
-            <ul
-              className="h-4/5 flex flex-col gap-5 justify-center items-center"
-            >
-              <Link href='/' className='text-2xl font-bold'>Accueil</Link>
-              <Link href='/cv' className='text-2xl font-bold'>CV</Link>
-              <Link href='/projets' className='text-2xl font-bold'>Projets</Link>
-              <Link href='/contact' className='text-2xl font-bold'>Contact</Link>
-            </ul>
+            <Links />
             <Langage />
             <div className='flex justify-center items-center gap-3'>
               <TiSocialLinkedin style={{fontSize: '2rem'}} aria-label='Linkedin'/>
@@ -74,6 +67,6 @@ export default function NavMobile() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </nav>
   );
 }
