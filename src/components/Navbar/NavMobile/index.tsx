@@ -3,6 +3,7 @@
 import Logo from '@/components/Navbar/Logo';
 import Langage from '@/components/Navbar/Langage';
 import Links from '@/components/Navbar/Links';
+import Title from '@/components/Navbar/Title';
 import { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
 import { TiSocialLinkedin } from "react-icons/ti";
@@ -35,9 +36,7 @@ export default function NavMobile() {
         <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
         </button>
-        <h2 className="font-extrabold text-3xl">
-          Mabbeal
-        </h2>
+        <Title />
       </div>
 
       <AnimatePresence>
@@ -54,9 +53,7 @@ export default function NavMobile() {
               className="font-extrabold" aria-label='Fermer le menu'>
                 <IoClose style={{fontSize: '2.2rem'}}/>
               </button>
-              <h2 className="font-extrabold text-3xl">
-                Mabbeal
-              </h2>
+              <Title />
             </div>
             <Links />
             <Langage />
