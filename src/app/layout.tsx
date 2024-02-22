@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import SizeScreenProvider from "@/context";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -23,10 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Navbar />
-        {/* {children} */}
-
-        <Footer />
+        <SizeScreenProvider>
+          <Navbar />
+          <div className="w-full h-full pt-20 lg:pt-0">
+            {children}
+          </div>
+          <Footer />
+        </SizeScreenProvider>
       </body>
     </html>
   );

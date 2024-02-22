@@ -22,7 +22,7 @@ export default function Langage() {
 
   return (
     <div>
-      <ul className="flex justify-center items-center gap-3 mb-5 lg:mb-0 lg:mx-auto lg:gap-5 lg:text-sm">
+      <ul className="flex justify-center items-center gap-3 mb-8 lg:mb-0 lg:mx-auto lg:gap-5 lg:text-sm">
         {langs.map((lang) => (
           <li
             key={lang}

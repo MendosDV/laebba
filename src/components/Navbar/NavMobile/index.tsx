@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaGithub } from "react-icons/fa";
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, animate } from 'framer-motion';
 
 export default function NavMobile() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -31,7 +31,7 @@ export default function NavMobile() {
   }, []);
 
   return (
-    <nav className='fixed top-0 left-0 w-full h-full'>
+    <nav className='fixed top-0 left-0 w-full h-full mb-7'>
       <div className={`border-transparent border-b mb-4 p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''} top-0`}>
         <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
