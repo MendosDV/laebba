@@ -2,7 +2,7 @@
 
 import Logo from '@/components/Navbar/Logo';
 import Langage from '@/components/Navbar/Langage';
-import Links from '@/components/Navbar/Links';
+import Links from '@/components/Navbar/NavMobile/Links.tsx';
 import Title from '@/components/Navbar/Title';
 import { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
@@ -46,7 +46,7 @@ export default function NavMobile() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="fixed top-0 left-0 w-full h-full bg-primary z-50 p-4"
+            className="fixed top-0 left-0 w-full h-full bg-primary p-4"
           >
             <div className='sticky top-0 flex justify-between items-center flex-row-reverse'>
               <button onClick={toggleMenu}
