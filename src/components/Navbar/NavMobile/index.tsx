@@ -55,7 +55,7 @@ export default function NavMobile() {
               </button>
               <Title />
             </div>
-            <Links />
+            <Links toggleMenu={toggleMenu}/>
             <Langage />
             <div className='flex justify-center items-center gap-3'>
               <TiSocialLinkedin style={{fontSize: '2rem'}} aria-label='Linkedin'/>
