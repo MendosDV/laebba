@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="flex h-24 w-full items-center justify-center border-t">
+    <footer className="flex h-10 w-full items-center justify-center border-t">
       <h4>Footer</h4>
       <a
         className="flex items-center justify-center gap-2"
@@ -10,6 +10,6 @@ export default function Footer() {
       >
         Powered by{" "}
       </a>
-    </div>
+    </footer>
   );
 }

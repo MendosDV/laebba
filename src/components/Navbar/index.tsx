@@ -8,8 +8,8 @@ export default function Navbar() {
   const { isMobile } = useSizeScreen();
 
   return (
-    <div>
+    <header className='fixed top-0 w-full h-10'>
       {isMobile ? <NavMobile /> : <NavDesktop />}
-    </div>
+    </header>
   );
 };
