@@ -29,7 +29,7 @@
           <SizeScreenProvider>
             <div className="flex flex-col h-screen justify-between">
               <Navbar />
-                <div className="px-10 mt-10">
+                <div className="px-10 mt-10 mb-10">
                   <SocialDesktop />
                   <PageTransition>
                     <main className="mb-auto">
