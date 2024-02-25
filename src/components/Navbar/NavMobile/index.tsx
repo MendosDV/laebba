@@ -32,8 +32,8 @@ export default function NavMobile() {
   }, []);
 
   return (
-    <nav className='fixed top-0 left-0 w-full'>
-      <div className={`border-transparent border-b p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''}`}>
+    <nav>
+      <div className={`border-transparent border-b pt-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''}`}>
         <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
         </button>
@@ -47,7 +47,7 @@ export default function NavMobile() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="fixed top-0 left-0 w-full h-full bg-primary p-4"
+            className="fixed top-0 left-0 w-full h-full bg-primary py-4 px-10"
           >
             <div className='sticky top-0 flex justify-between items-center flex-row-reverse'>
               <button onClick={toggleMenu}
