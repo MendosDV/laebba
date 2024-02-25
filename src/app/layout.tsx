@@ -4,7 +4,7 @@
   import SizeScreenProvider from "@/context";
   import Navbar from '../components/Navbar';
   import Footer from '../components/Footer';
-
+  import PageTransition from "../components/PageTransition";
 
   const nunito = Nunito({
     weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -27,10 +27,14 @@
         <body className={nunito.className}>
           <SizeScreenProvider>
             <Navbar />
-            {children}
+              <div className="mt-24">
+                <PageTransition>
+                  {children}
+                </PageTransition>
+              </div>
             <Footer />
           </SizeScreenProvider>
         </body>
       </html>
-    );
+    )
   }
