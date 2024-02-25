@@ -31,8 +31,8 @@ export default function NavMobile() {
   }, []);
 
   return (
-    <nav className='fixed top-0 left-0 w-full h-full mb-7'>
-      <div className={`border-transparent border-b mb-4 p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''} top-0`}>
+    <nav className='fixed top-0 left-0 w-full'>
+      <div className={`border-transparent border-b p-4 bg-primary flex justify-between items-center flex-row-reverse ${scrollPosition > 0 ? 'shadow-lg' : ''}`}>
         <button onClick={toggleMenu} aria-label='Ouvrir le menu'>
           <Logo />
         </button>
