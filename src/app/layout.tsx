@@ -5,6 +5,7 @@
   import Navbar from '../components/Navbar';
   import Footer from '../components/Footer';
   import PageTransition from "../components/PageTransition";
+  import SocialDesktop from '../components/SocialMedia/SocialDesktop';
 
   const nunito = Nunito({
     weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -26,13 +27,18 @@
       <html lang="en">
         <body className={nunito.className}>
           <SizeScreenProvider>
-            <Navbar />
-              <div className="mt-24">
-                <PageTransition>
-                  {children}
-                </PageTransition>
-              </div>
-            <Footer />
+            <div className="flex flex-col h-screen justify-between">
+              <Navbar />
+                <div className="mt-24 px-10">
+                  <SocialDesktop />
+                  <PageTransition>
+                    <main className="mb-auto">
+                      {children}
+                    </main>
+                  </PageTransition>
+                </div>
+              <Footer />
+            </div>
           </SizeScreenProvider>
         </body>
       </html>

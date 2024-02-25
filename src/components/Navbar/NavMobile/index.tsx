@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaGithub } from "react-icons/fa";
 import { AnimatePresence, motion, animate } from 'framer-motion';
+import SocialMobile from '@/components/SocialMedia/SocialMobile';
 
 export default function NavMobile() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,10 +58,7 @@ export default function NavMobile() {
             </div>
             <Links toggleMenu={toggleMenu}/>
             <Langage />
-            <div className='flex justify-center items-center gap-3'>
-              <TiSocialLinkedin style={{fontSize: '2rem'}} aria-label='Linkedin'/>
-              <FaGithub style={{fontSize: '2rem'}} aria-label='Github'/>
-            </div>
+            <SocialMobile />
           </motion.div>
         )}
       </AnimatePresence>

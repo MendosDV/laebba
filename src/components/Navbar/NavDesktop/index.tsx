@@ -5,7 +5,7 @@ import Title from '@/components/Navbar/Title';
 
 export default function NavbarDesktop() {
   return (
-    <nav className="fixed w-full p-4 flex justify-between items-center flex-row-reverse top-0">
+    <nav className="p-4 flex justify-between items-center flex-row-reverse">
       <div className='flex gap-10 justify-center items-center'>
         <Langage />
         <Logo />
