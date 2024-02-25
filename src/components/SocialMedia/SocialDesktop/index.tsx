@@ -22,7 +22,7 @@ export default function SocialDesktop() {
       return (
         <div className='absolute top-1/2 flex flex-col gap-5'>
         {socialMedia.map(({ name, icon, href }) => (
-            <a href={href} key={name} target='_blank' className="rounded-full p-2 bg-white shadow-lg">
+            <a href={href} key={name} target='_blank' className="rounded-full p-2 bg-white shadow-xl">
               {icon}
             </a>
         ))}
